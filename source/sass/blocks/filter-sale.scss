@@ -1,0 +1,66 @@
+.filter-sale_filter-wrapper {
+  display: grid;
+  padding: 0 16px 16px 16px;
+
+  @media (min-width: $desktop-small-width) {
+    grid-template-columns: 505px 375px 375px;
+    justify-content: space-between;
+    padding: 23px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: 505px 624px 624px;
+  }
+}
+
+.checks-wrapper {
+  display: grid;
+  margin-top: 10px;
+  align-content: space-between;
+
+  @media (min-width: $desktop-small-width) {
+    display: flex;
+  }
+}
+
+
+.arendator_label {
+
+  @media (min-width: $desktop-small-width) {
+    margin-right: 26px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-right: 16px;
+  }
+}
+
+.sale_price {
+  width: 138px;
+  margin-right: 16px;
+  &--to {
+    margin-right: 0;
+  }
+
+  @media (min-width: $desktop-small-width) {
+    width: 163px;
+    margin-right: 8px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 288px;
+  }
+}
+
+.filter-sale_block--budget {
+  grid-template-rows: 20px 32px 62px;
+
+    @media (min-width: $desktop-small-width) {
+      grid-template-rows: repeat(3, 32px);
+    }
+}
+
+.type-all_sale:checked  ~ .type_category{
+  background-color: $blue1;
+  color: #ffffff;
+}

@@ -1,0 +1,166 @@
+.filter-bsale_title {
+  height: 31px;
+  margin: 0;
+  margin-bottom: 25px;
+  font-size: 18px;
+  font-weight: 700;
+
+  @media (min-width: $desktop-small-width) {
+    font-size: 32px;
+    font-weight: 700;
+  }
+}
+
+.filter-bsale_filter-wrapper {
+  display: grid;
+  padding: 0 16px 16px 16px;
+
+  @media (min-width: $desktop-small-width) {
+    grid-template-columns: 505px 306px 253px 162px;
+    justify-content: space-between;
+    padding: 23px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: 505px 537px 353px 311px;
+  }
+}
+
+.filter-rent_block--business-sale {
+  grid-template-rows: 20px max-content max-content;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(44, 46, 53, 0.12);
+
+  @media (min-width: $desktop-small-width) {
+    grid-template-rows: repeat(3, 32px);
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+.type-bsale_category {
+  display: flex;
+  max-height: 18px;
+  padding: 3px 8px;
+  margin-right: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: $dark;
+  line-height: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  &--last {
+    margin-right: 0;
+  }
+
+  @media (min-width: $desktop-small-width) {
+    margin-bottom: 0;
+  }
+}
+
+.type-bsale_wrapper {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+
+  @media (min-width: $desktop-small-width) {
+    justify-content: unset;
+  }
+}
+
+.type-all:checked  ~ .type-bsale_category {
+  background-color: $blue1;
+  color: #ffffff;
+}
+
+.type-all_bsale:checked  ~ .type_category{
+  background-color: $blue1;
+  color: #ffffff;
+}
+
+.filter-bsale_filter-wrapper {
+  display: grid;
+  padding: 0 16px 16px 16px;
+
+  @media (min-width: $desktop-small-width) {
+    grid-template-columns: 505px 306px 253px 162px;
+    justify-content: space-between;
+    padding: 23px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: 505px 537px 353px 311px;
+  }
+}
+
+.bsale-budget_price {
+  width: 138px;
+  margin-right: 16px;
+  &--to {
+    margin-right: 0;
+  }
+
+  @media (min-width: $desktop-small-width) {
+    width: 129px;
+    margin-right: 8px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 244px;
+  }
+}
+
+.dropdown--payback {
+  width: 315px;
+
+  @media (min-width: $desktop-small-width) {
+    width: 233px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 333px;
+  }
+}
+
+.dropdown_options--payback {
+  width: 335px;
+
+  @media (min-width: $desktop-small-width) {
+    width: 253px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 353px;
+  }
+}
+
+.options_item--payback {
+  width: 335px;
+
+  @media (min-width: $desktop-small-width) {
+    width: 253px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 353px;
+  }
+}
+
+.location_input--profit {
+
+  @media (min-width: $desktop-small-width) {
+    width: 142px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 291px;
+  }
+}
+
+.filter-rent_block--profit {
+  grid-template-rows: 20px 32px;
+
+  @media (min-width: $desktop-small-width) {
+    grid-template-rows: repeat(3, 32px);
+  }
+}

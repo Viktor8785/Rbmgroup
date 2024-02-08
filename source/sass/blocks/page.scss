@@ -1,0 +1,40 @@
+.page {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: rgba(0, 0, 0, 0.1);
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.page__body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+  min-width: 374px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: $dark;
+  background: #ffffff;
+
+  @media (min-width: $desktop-small-width) {
+    width: 1440px;
+  }
+  @media (min-width: $desktop-width) {
+    width: 1920px;
+  }
+}
+
+.page_body-wrapper {
+  display: grid;
+  width: calc(100% - 32px);
+  justify-content: center;
+
+  @media (min-width: $desktop-small-width) {
+    justify-content: unset;
+  }
+}
