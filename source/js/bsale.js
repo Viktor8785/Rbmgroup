@@ -1,30 +1,57 @@
+import {header} from './header.js';
+import {sliderInit} from './slider.js'
+import {cardBsale} from './card-bsale-template.js';
+
 const inputBsale = document.querySelector("#bsale-input");
 const dropdownBsale = document.querySelector("#bsale-dropdown");
+const options = document.querySelectorAll(".options_item")
 const dropdownPyback = document.querySelector("#payback-dropdown");
 const inputPayback = document.querySelector("#payback-input")
+const optionsPayback = document.querySelectorAll(".options_item--payback")
 const budget1 = document.querySelector("#budget1");
 const budget2 = document.querySelector("#budget2");
 const budget3 = document.querySelector("#budget3");
 const budget4 = document.querySelector("#budget4");
 const budget5 = document.querySelector("#budget5");
 const budgetInput = document.querySelector("#bsale-price-min");
-const headerNav = document.querySelector("#header-nav");
-const headerNavWrapper = document.querySelector("#header-nav-wrapper");
-const headerMenu = document.querySelector("#header-menu");
-const headerLogo = document.querySelector("#header-logo");
-const headerClose = document.querySelector("#header-close");
+const cardList = document.querySelector('.card-list');
+const cards = cardList.children;
 
-function showBsale(value) {
-  inputBsale.value = value;
+for(let i=0; i < 4; i++) {
+  const div = document.createElement('div');
+  div.innerHTML = cardBsale;
+  const container = div.querySelector(".slider_container");
+  const pictures = container.querySelectorAll(".card_picture");
+  [...pictures][0].classList.remove('card_picture--active');
+  const picture = [...pictures][i].cloneNode(true);
+  picture.classList.add('card_picture--active');
+  [...pictures][i].remove();
+  container.insertAdjacentElement('afterbegin', picture);
+  const li = div.firstElementChild;
+  li.classList.add('card--deal');
+  cardList.insertAdjacentElement('afterbegin', li);
 }
+
+[...cards].forEach(card => {
+  const slider = card.querySelector('.card_wrapper');
+  sliderInit(slider, card, 5);
+})
+
+options.forEach(option => {
+  option.addEventListener('click', (ev) => {
+    inputBsale.value = ev.target.innerText;
+  });
+});
 
 dropdownBsale.onclick = function() {
   dropdownBsale.classList.toggle("active");
 }
 
-function showPayback(value) {
-  inputPayback.value = value;
-}
+optionsPayback.forEach(option => {
+  option.addEventListener('click', (ev) => {
+    inputPayback.value = ev.target.innerText;
+  });
+});
 
 dropdownPyback.onclick = function() {
   dropdownPyback.classList.toggle("active");
@@ -64,18 +91,4 @@ window.addEventListener('touchstart', (ev) => {
   }
 });
 
-headerMenu.addEventListener('click', (ev) => {
-  headerMenu.classList.add("header_menu--opened");
-  headerNav.classList.add("header_nav--opened");
-  headerNavWrapper.classList.add("header_nav-wrapper--opened");
-  headerLogo.classList.add("header_logo--opened");
-  headerClose.classList.add("header_close--opened");
-});
-
-headerClose.addEventListener('click', (ev) => {
-  headerMenu.classList.remove("header_menu--opened");
-  headerNav.classList.remove("header_nav--opened");
-  headerNavWrapper.classList.remove("header_nav-wrapper--opened");
-  headerLogo.classList.remove("header_logo--opened");
-  headerClose.classList.remove("header_close--opened");
-});
+header();

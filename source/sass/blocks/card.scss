@@ -1,33 +1,56 @@
 .catalog {
+  display: grid;
   width: 100%;
+  justify-content: center;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
+
 }
 
 .card-list {
   display: flex;
   flex-wrap: wrap;
-  width: 347px;
-  justify-content: space-between;
+  width: 361px;
+  justify-content: space-around;
   padding: 0;
   margin: 0;
 
   @media (min-width: $tablet-width) {
     width: 100%;
-    justify-content: space-around;
   }
 
   @media (min-width: $desktop-small-width) {
     width: 100%;
+    justify-content: unset;
   }
 }
 
 .card {
   position: relative;
-  width: 345px;
+  width: 361px;
   min-height: 538px;
+  height: max-content;
   margin-bottom: 12px;
   list-style: none;
   border: 1px solid rgba(44, 46, 53, 0.12);
   border-radius: 24px;
+
+  @media (min-width: $tablet-width) {
+    width: 343px;
+  }
+
+  @media (min-width: $desktop-small-width) {
+    margin-right: 12px;
+    &:nth-child(n + 4) {
+      margin-right: 0;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-right: 12px;
+  }
 }
 
 .card_wrapper {
@@ -36,27 +59,52 @@
 
 .card_slider {
   position: relative;
-  width: 313px;
+  width: 329px;
   height: 247px;
   overflow-x: hidden;
+
+  @media (min-width: $tablet-width) {
+    width: 313px;
+  }
 }
 
 .slider_container {
   position: relative;
-  display: flex;
-  width: 313px;
+  width: 329px;
   height: 247px;
-  flex-wrap: nowrap;
+
+  @media (hover: none) and (pointer: coarse) {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 313px;
+  }
 }
 
 .card_picture {
+  display: none;
   line-height: 0;
+  &--active {
+    display: block;
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    display: block;
+  }
+
 }
 
 .card_img {
-  width: 313px;
+  width: 329px;
   height: 247px;
   border-radius: 5px;
+  object-fit: fill;
+
+  @media (min-width: $tablet-width) {
+    width: 313px;
+  }
 }
 
 .card-title {
@@ -145,6 +193,20 @@
   grid-template-rows: 1fr 15px;
   width: 281px;
   height: 215px;
+}
+
+.card_picture-wrapper {
+  position: absolute;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.sector {
+  flex-grow: 1;
+  z-index: 1;
 }
 
 .stickers_wrapper {

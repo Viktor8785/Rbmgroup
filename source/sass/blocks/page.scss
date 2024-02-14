@@ -14,16 +14,31 @@
   display: flex;
   justify-content: center;
   margin: 0;
+  margin-left: auto;
+  margin-right: auto;
   width: 100%;
   min-width: 374px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   color: $dark;
   background: #ffffff;
+  &::-webkit-scrollbar {
+    width: 0 !important
+  }
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+
+  @media (min-width: $tablet-width) {
+    width: 720px;
+  }
 
   @media (min-width: $desktop-small-width) {
     width: 1440px;
   }
+
   @media (min-width: $desktop-width) {
     width: 1920px;
   }
@@ -34,7 +49,8 @@
   width: calc(100% - 32px);
   justify-content: center;
 
-  @media (min-width: $desktop-small-width) {
+  @media (min-width: $tablet-width) {
+    width: calc(100% - 24px);
     justify-content: unset;
   }
 }

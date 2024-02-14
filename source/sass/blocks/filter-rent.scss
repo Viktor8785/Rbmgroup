@@ -4,12 +4,12 @@
 
 .filter-rent_objects {
   display: block;
-  height: 31px;
   margin-bottom: 25px;
 
   @media (min-width: $desktop-small-width) {
     display: flex;
     width: 100%;
+    height: 31px;
     align-items: center;
     justify-content: space-between;
   }
@@ -19,6 +19,7 @@
   margin: 0;
   font-size: 18px;
   font-weight: 700;
+  line-height: 100%;
 
   @media (min-width: $desktop-small-width) {
     font-size: 32px;
@@ -29,7 +30,7 @@
 .filter-rent_br {
   display: block;
 
-  @media (min-width: $desktop-small-width) {
+  @media (min-width: $tablet-width) {
     display: none;
   }
 }
@@ -154,35 +155,35 @@
   }
 
   &--rent {
-    grid-template-rows: 20px 32px max-content max-content;
+    grid-template-rows: 16px 32px max-content max-content;
     padding-bottom: 16px;
     border-bottom: 1px solid rgba(44, 46, 53, 0.12);
 
     @media (min-width: $desktop-small-width) {
-      grid-template-rows: repeat(3, 32px);
+      grid-template-rows: 26px 32px 32px;
       padding-bottom: 0;
       border-bottom: none;
     }
   }
   &--bsale {
-    grid-template-rows: 20px 32px;
+    grid-template-rows: 22px 32px;
 
     @media (min-width: $desktop-small-width) {
-      grid-template-rows: repeat(3, 32px);
+      grid-template-rows: 26px 32px 32px;
     }
   }
   &--square {
-    grid-template-rows: 20px 32px 32px;
+    grid-template-rows: 22px 32px 32px;
 
     @media (min-width: $desktop-small-width) {
-      grid-template-rows: repeat(3, 32px);
+      grid-template-rows: 26px 32px 32px;
     }
   }
   &--location {
-    grid-template-rows: 20px 32px 32px;
+    grid-template-rows: 22px 32px 32px;
 
     @media (min-width: $desktop-small-width) {
-      grid-template-rows: repeat(3, 32px);
+      grid-template-rows: 26px 32px 32px;
     }
   }
 }
@@ -198,7 +199,12 @@
   }
 }
 
-.bussines-sale_disabled {
+.block_sup {
+  font-weight: 900;
+  font-size: 9px;
+}
+
+.business-sale_disabled {
   opacity: 0.5;
 }
 
@@ -310,13 +316,15 @@
   flex-wrap: nowrap;
   justify-content: space-between;
 
-  @media (min-width: $mobile-width) {
+  @media (min-width: $desktop-small-width) {
     justify-content: unset;
   }
 }
 
 .price_input {
+  width: 138px;
   height: 32px;
+  margin-right: 16px;
   padding: 0;
   padding-left: 10px;
   padding-right: 10px;
@@ -336,72 +344,64 @@
   &:disabled {
     background-color: $gray1;
     &::placeholder {
-      opacity: 0.5;
+      opacity: 0.7;
     }
   }
+
+  @media (min-width: $mobile-width) {
+    width: 47%;
+  }
+
   &--price {
-    width: 138px;
-    margin-right: 16px;
 
     @media (min-width: $desktop-small-width) {
       width: 71px;
       margin-right: 8px;
     }
 
-    @media (min-width: $desktop-width) {
-      width: 132px;
-    }
   }
   &--square {
-    width: 138px;
-    margin-right: 16px;
 
     @media (min-width: $desktop-small-width) {
       width: 44px;
       margin-right: 8px;
     }
-
-    @media (min-width: $desktop-width) {
-      width: 132px;
-    }
   }
   &--bsale {
-    width: 138px;
-    margin-right: 16px;
 
     @media (min-width: $desktop-small-width) {
       width: 82px;
       margin-right: 8px;
     }
-
-    @media (min-width: $desktop-width) {
-      width: 132px;
-    }
   }
   &--to {
     margin-right: 0;
   }
+
+  @media (min-width: $desktop-width) {
+    width: 132px;
+  }
 }
 
 
-.bussines-sale__empty {
+.business-sale__empty {
   display: block;
 }
 
-.bussines-sale__filled {
+.business-sale__filled {
   display: none;
 }
 
-.bussines-sale_input {
-  &:checked  ~ .bussines-sale__empty{
+.business-sale_input {
+  &:checked  ~ .business-sale__empty{
     display: none;
   }
-  &:checked  ~ .bussines-sale__filled{
+  &:checked  ~ .business-sale__filled{
     display: block;
   }
 }
 
-.bussines-sale_label {
+.business-sale_label {
   display: none;
 
   @media (min-width: $desktop-small-width) {
@@ -411,7 +411,7 @@
   }
 }
 
-.bussines-sale_title {
+.business-sale_title {
   margin: 0;
   margin-top: 10px;
   margin-left: 10px;
@@ -492,7 +492,6 @@
 
 .location_input {
   width: calc(100% - 24px);
-  max-width: 315px;
   height: 32px;
   padding: 0;
   padding-left: 10px;
@@ -520,7 +519,7 @@
   }
 }
 
-.bussines-sale_order {
+.business-sale_order {
   order: 0;
 
   @media (min-width: $desktop-small-width) {

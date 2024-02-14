@@ -57,7 +57,7 @@ export function processScripts () {
 
 export function optimizeImages () {
   return gulp.src('source/img/**/*.{png,jpg}')
-    .pipe(gulpIf(!isDevelopment, squoosh()))
+    .pipe(gulpIf(isDevelopment, squoosh()))
     .pipe(gulp.dest('build/img'))
 }
 

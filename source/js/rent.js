@@ -1,33 +1,57 @@
+import {header} from './header.js';
+import {sliderInit} from './slider.js'
+import {cardRent} from './card-rent-template.js';
+
 const dropdownRent = document.querySelector("#rent-dropdown");
 const inputRent = document.querySelector("#rent-input")
+const options = document.querySelectorAll(".options_item")
 const bSale = document.querySelector("#bsale");
 const bSaleMobile = document.querySelector("#bsale-mobile");
 const bSaleTitle = document.querySelector("#bsale-title");
 const bSaleInput1 = document.querySelector("#bsale-input1");
 const bSaleInput2 = document.querySelector("#bsale-input2");
-const headerNav = document.querySelector("#header-nav");
-const headerNavWrapper = document.querySelector("#header-nav-wrapper");
-const headerMenu = document.querySelector("#header-menu");
-const headerLogo = document.querySelector("#header-logo");
-const headerClose = document.querySelector("#header-close");
+const cardList = document.querySelector('.card-list');
+const cards = cardList.children;
 
-function show(value) {
-  inputRent.value = value;
+for(let i=0; i < 4; i++) {
+  const div = document.createElement('div');
+  div.innerHTML = cardRent;
+  const container = div.querySelector(".slider_container");
+  const pictures = container.querySelectorAll(".card_picture");
+  [...pictures][0].classList.remove('card_picture--active');
+  const picture = [...pictures][i].cloneNode(true);
+  picture.classList.add('card_picture--active');
+  [...pictures][i].remove();
+  container.insertAdjacentElement('afterbegin', picture);
+  const li = div.firstElementChild;
+  li.classList.add('card--deal');
+  cardList.insertAdjacentElement('afterbegin', li);
 }
+
+[...cards].forEach(card => {
+  const slider = card.querySelector('.card_wrapper');
+  sliderInit(slider, card, 5);
+})
+
+options.forEach(option => {
+  option.addEventListener('click', (ev) => {
+    inputRent.value = ev.target.innerText;
+  });
+})
 
 dropdownRent.onclick = function() {
   dropdownRent.classList.toggle("active");
-}
+};
 
 bSale.addEventListener('click', (ev) => {
   if (!bSale.checked) {
-    bSaleTitle.classList.add('bussines-sale_disabled');
+    bSaleTitle.classList.add('business-sale_disabled');
     bSaleInput1.disabled = true;
     bSaleInput2.disabled = true;
     bSaleInput1.value = '';
     bSaleInput2.value = '';
   } else {
-    bSaleTitle.classList.remove('bussines-sale_disabled');
+    bSaleTitle.classList.remove('business-sale_disabled');
     bSaleInput1.disabled = false;
     bSaleInput2.disabled = false;
   }
@@ -35,13 +59,13 @@ bSale.addEventListener('click', (ev) => {
 
 bSaleMobile.addEventListener('click', (ev) => {
   if (!bSaleMobile.checked) {
-    bSaleTitle.classList.add('bussines-sale_disabled');
+    bSaleTitle.classList.add('business-sale_disabled');
     bSaleInput1.disabled = true;
     bSaleInput2.disabled = true;
     bSaleInput1.value = '';
     bSaleInput2.value = '';
   } else {
-    bSaleTitle.classList.remove('bussines-sale_disabled');
+    bSaleTitle.classList.remove('business-sale_disabled');
     bSaleInput1.disabled = false;
     bSaleInput2.disabled = false;
   }
@@ -59,18 +83,4 @@ window.addEventListener('touchstart', (ev) => {
   }
 });
 
-headerMenu.addEventListener('click', (ev) => {
-  headerMenu.classList.add("header_menu--opened");
-  headerNav.classList.add("header_nav--opened");
-  headerNavWrapper.classList.add("header_nav-wrapper--opened");
-  headerLogo.classList.add("header_logo--opened");
-  headerClose.classList.add("header_close--opened");
-});
-
-headerClose.addEventListener('click', (ev) => {
-  headerMenu.classList.remove("header_menu--opened");
-  headerNav.classList.remove("header_nav--opened");
-  headerNavWrapper.classList.remove("header_nav-wrapper--opened");
-  headerLogo.classList.remove("header_logo--opened");
-  headerClose.classList.remove("header_close--opened");
-});
+header();

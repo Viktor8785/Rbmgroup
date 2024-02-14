@@ -1,0 +1,126 @@
+.show-map {
+  margin-top: 36px;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+
+  @media (min-width: $desktop-small-width) {
+    display: none;
+  }
+}
+
+.rent_catalog {
+  display: grid;
+  margin-top: 24px;
+  justify-items: center;
+
+  @media (min-width: $desktop-small-width) {
+    display: grid;
+    margin-top: 48px;
+    grid-template-columns: 702px 1fr;
+    column-gap: 22px;
+    align-items: start;
+  }
+}
+
+.card-list--deal {
+
+  @media (min-width: $desktop-small-width) {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+.card--deal {
+  margin-right: 0;
+}
+
+.rent_catalog-map {
+  width: 100%;
+  line-height: 0;
+  margin-top: 24px;
+  overflow: hidden;
+  border-radius: 24px;
+
+  @media (min-width: $desktop-small-width) {
+    width: 692px;
+    //height: 1208px;
+    margin-top: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1172px;
+  }
+}
+
+.map_img {
+  width: 100%;
+  object-fit: fill;
+
+  @media (min-width: $desktop-small-width) {
+    width: 1172px;
+    height: 1214px;
+  }
+}
+
+.rent_recall {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  background-color: $gray2;
+  border-radius: 16px;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media (min-width: $desktop-small-width) {
+    display: flex;
+    width: 654px;
+    padding: 24px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+}
+
+.recall_title {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.recall_subtitle {
+  padding: 0;
+  margin: 0;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.recall_button {
+  margin-top: 16px;
+  padding: 16px 36px;
+  border: none;
+  border-radius: 8px;
+  background-color: $dark;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 0;
+  }
+}
+
+.recall_br {
+  display: block;
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}

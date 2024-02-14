@@ -1,9 +1,9 @@
 .filter-bsale_title {
-  height: 31px;
   margin: 0;
   margin-bottom: 25px;
   font-size: 18px;
   font-weight: 700;
+  line-height: 100%;
 
   @media (min-width: $desktop-small-width) {
     font-size: 32px;
@@ -27,12 +27,12 @@
 }
 
 .filter-rent_block--business-sale {
-  grid-template-rows: 20px max-content max-content;
+  grid-template-rows: 22px max-content max-content;
   padding-bottom: 16px;
   border-bottom: 1px solid rgba(44, 46, 53, 0.12);
 
   @media (min-width: $desktop-small-width) {
-    grid-template-rows: repeat(3, 32px);
+    grid-template-rows: 26px 32px 32px;
     padding-bottom: 0;
     border-bottom: none;
   }
@@ -63,7 +63,7 @@
   align-items: end;
   justify-content: space-between;
 
-  @media (min-width: $desktop-small-width) {
+  @media (min-width: $tablet-width) {
     justify-content: unset;
   }
 }
@@ -100,6 +100,10 @@
     margin-right: 0;
   }
 
+  @media (min-width: $mobile-width) {
+    width: 47%;
+  }
+
   @media (min-width: $desktop-small-width) {
     width: 129px;
     margin-right: 8px;
@@ -111,7 +115,10 @@
 }
 
 .dropdown--payback {
-  width: 315px;
+  width: calc(100% - 22px);
+  & input {
+    font-size: 14px;
+  }
 
   @media (min-width: $desktop-small-width) {
     width: 233px;
@@ -134,8 +141,18 @@
   }
 }
 
+
+
 .options_item--payback {
   width: 335px;
+  font-size: 14px;
+  padding: 10px;
+  font-weight: 400;
+  cursor: pointer;
+  &:hover {
+    background: #62baea;
+    color: #fff;
+  }
 
   @media (min-width: $desktop-small-width) {
     width: 253px;
@@ -158,9 +175,9 @@
 }
 
 .filter-rent_block--profit {
-  grid-template-rows: 20px 32px;
+  grid-template-rows: 22px 32px;
 
   @media (min-width: $desktop-small-width) {
-    grid-template-rows: repeat(3, 32px);
+    grid-template-rows: 26px 32px 32px;
   }
 }

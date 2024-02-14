@@ -1,18 +1,42 @@
+import {header} from './header.js';
+import {sliderInit} from './slider.js'
+import {cardSale} from './card-sale-template.js';
+
 const dropdownSale = document.querySelector("#sale-dropdown");
 const inputSale = document.querySelector("#sale-input");
-const headerNav = document.querySelector("#header-nav");
-const headerNavWrapper = document.querySelector("#header-nav-wrapper");
-const headerMenu = document.querySelector("#header-menu");
-const headerLogo = document.querySelector("#header-logo");
-const headerClose = document.querySelector("#header-close");
+const options = document.querySelectorAll(".options_item")
+const cardList = document.querySelector('.card-list');
+const cards = cardList.children;
 
-function showSale(value) {
-  inputSale.value = value;
+for(let i=0; i < 4; i++) {
+  const div = document.createElement('div');
+  div.innerHTML = cardSale;
+  const container = div.querySelector(".slider_container");
+  const pictures = container.querySelectorAll(".card_picture");
+  [...pictures][0].classList.remove('card_picture--active');
+  const picture = [...pictures][i].cloneNode(true);
+  picture.classList.add('card_picture--active');
+  [...pictures][i].remove();
+  container.insertAdjacentElement('afterbegin', picture);
+  const li = div.firstElementChild;
+  li.classList.add('card--deal');
+  cardList.insertAdjacentElement('afterbegin', li);
 }
+
+[...cards].forEach(card => {
+  const slider = card.querySelector('.card_wrapper');
+  sliderInit(slider, card, 5);
+})
+
+options.forEach(option => {
+  option.addEventListener('click', (ev) => {
+    inputSale.value = ev.target.innerText;
+  });
+});
 
 dropdownSale.onclick = function() {
   dropdownSale.classList.toggle("active");
-}
+};
 
 window.addEventListener('click', (ev) => {
   if (!ev.composedPath().includes(dropdownSale) && dropdownSale.classList.contains("active")) {
@@ -26,18 +50,4 @@ window.addEventListener('touchstart', (ev) => {
   }
 });
 
-headerMenu.addEventListener('click', (ev) => {
-  headerMenu.classList.add("header_menu--opened");
-  headerNav.classList.add("header_nav--opened");
-  headerNavWrapper.classList.add("header_nav-wrapper--opened");
-  headerLogo.classList.add("header_logo--opened");
-  headerClose.classList.add("header_close--opened");
-});
-
-headerClose.addEventListener('click', (ev) => {
-  headerMenu.classList.remove("header_menu--opened");
-  headerNav.classList.remove("header_nav--opened");
-  headerNavWrapper.classList.remove("header_nav-wrapper--opened");
-  headerLogo.classList.remove("header_logo--opened");
-  headerClose.classList.remove("header_close--opened");
-});
+header();

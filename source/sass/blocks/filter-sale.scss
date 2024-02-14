@@ -16,7 +16,6 @@
 .checks-wrapper {
   display: grid;
   margin-top: 10px;
-  align-content: space-between;
 
   @media (min-width: $desktop-small-width) {
     display: flex;
@@ -42,6 +41,10 @@
     margin-right: 0;
   }
 
+  @media (min-width: $mobile-width) {
+    width: 47%;
+  }
+
   @media (min-width: $desktop-small-width) {
     width: 163px;
     margin-right: 8px;
@@ -53,10 +56,10 @@
 }
 
 .filter-sale_block--budget {
-  grid-template-rows: 20px 32px 62px;
+  grid-template-rows: 22px 32px 62px;
 
     @media (min-width: $desktop-small-width) {
-      grid-template-rows: repeat(3, 32px);
+      grid-template-rows: 26px 32px 32px;
     }
 }
 

@@ -1,21 +1,33 @@
-const headerNav = document.querySelector("#header-nav");
-const headerNavWrapper = document.querySelector("#header-nav-wrapper");
-const headerMenu = document.querySelector("#header-menu");
-const headerLogo = document.querySelector("#header-logo");
-const headerClose = document.querySelector("#header-close");
+import {header} from './header.js';
+import {sliderInit} from './slider.js'
+import {cardBsale} from './card-bsale-template.js';
+import {cardSale} from './card-sale-template.js';
+import {cardRent} from './card-rent-template.js';
 
-headerMenu.addEventListener('click', (ev) => {
-  headerMenu.classList.add("header_menu--opened");
-  headerNav.classList.add("header_nav--opened");
-  headerNavWrapper.classList.add("header_nav-wrapper--opened");
-  headerLogo.classList.add("header_logo--opened");
-  headerClose.classList.add("header_close--opened");
-});
+const cardList = document.querySelector('.card-list');
+const cards = cardList.children;
 
-headerClose.addEventListener('click', (ev) => {
-  headerMenu.classList.remove("header_menu--opened");
-  headerNav.classList.remove("header_nav--opened");
-  headerNavWrapper.classList.remove("header_nav-wrapper--opened");
-  headerLogo.classList.remove("header_logo--opened");
-  headerClose.classList.remove("header_close--opened");
-});
+createCards(cardRent, 0);
+createCards(cardSale, 1);
+createCards(cardBsale, 2);
+createCards(cardRent, 3);
+
+function createCards(template, index) {
+  const div = document.createElement('div');
+  div.innerHTML = template;
+  const container = div.querySelector(".slider_container");
+  const pictures = container.querySelectorAll(".card_picture");
+  [...pictures][0].classList.remove('card_picture--active');
+  const picture = [...pictures][index].cloneNode(true);
+  picture.classList.add('card_picture--active');
+  [...pictures][index].remove();
+  container.insertAdjacentElement('afterbegin', picture);
+  cardList.insertAdjacentElement('afterbegin', div.firstElementChild);
+};
+
+[...cards].forEach(card => {
+  const slider = card.querySelector('.card_wrapper');
+  sliderInit(slider, card, 5);
+})
+
+header();
