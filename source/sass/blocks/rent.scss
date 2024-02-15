@@ -65,7 +65,7 @@
 
 .rent_recall {
   display: block;
-  width: 100%;
+  width: calc(100% - 32px);
   padding: 16px;
   background-color: $gray2;
   border-radius: 16px;

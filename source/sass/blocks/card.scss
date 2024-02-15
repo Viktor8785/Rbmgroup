@@ -78,6 +78,11 @@
     flex-wrap: nowrap;
   }
 
+  @media (max-width: $touch-width) {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
   @media (min-width: $tablet-width) {
     width: 313px;
   }
@@ -94,12 +99,15 @@
     display: block;
   }
 
+  @media (max-width: $touch-width) {
+    display: block;
+  }
 }
 
 .card_img {
   width: 329px;
   height: 247px;
-  border-radius: 5px;
+  border-radius: 16px;
   object-fit: fill;
 
   @media (min-width: $tablet-width) {
@@ -263,6 +271,8 @@
   justify-content: center;
   width: 15px;
   height: 15px;
+  border: 2px solid transparent;
+  border-radius: 50%;
   &--active {
     border: 2px solid #ffffff;
     border-radius: 50%;

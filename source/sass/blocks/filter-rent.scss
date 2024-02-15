@@ -64,6 +64,10 @@
   align-items: center;
   cursor: pointer;
 
+  @media (hover: none) and (pointer: coarse) {
+    -webkit-tap-highlight-color: transparent;
+  }
+
   @media (min-width: $mobile-width) {
     margin-right: 16px;
   }
@@ -403,6 +407,7 @@
 
 .business-sale_label {
   display: none;
+  -webkit-tap-highlight-color: transparent;
 
   @media (min-width: $desktop-small-width) {
     display: flex;
@@ -426,8 +431,10 @@
   font-size: 12px;
   font-weight: 400;
   font-family: "Roboto", sans-serif;
-  cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  & label {
+    cursor: pointer;
+  }
   &--mobile {
 
     @media (min-width: $desktop-small-width) {
@@ -439,7 +446,6 @@
 .form-switch i {
   position: relative;
   display: inline-block;
-  margin-right: 10px;
   width: 32px;
   height: 18px;
   border-radius: 9px;
@@ -488,6 +494,10 @@
 
 .form-switch_title {
   padding-top: 2px;
+  margin-left: 10px;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
 }
 
 .location_input {

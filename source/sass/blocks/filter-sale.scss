@@ -15,6 +15,7 @@
 
 .checks-wrapper {
   display: grid;
+  grid-template-rows: 26px 26px;
   margin-top: 10px;
 
   @media (min-width: $desktop-small-width) {
