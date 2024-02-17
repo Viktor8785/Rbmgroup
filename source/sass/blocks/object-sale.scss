@@ -8,7 +8,7 @@
 
   @media (min-width: $desktop-small-width) {
     display: flex;
-    max-width: 100%;
+    width: 100%;
     height: 35px;
     align-items: center;
     justify-content: space-between;
@@ -74,10 +74,11 @@
   width: 100%;
   margin-top: 16px;
   justify-content: space-between;
-
+  order: 1;
 
   @media (min-width: $tablet-width) {
     width: 696px;
+    order: unset;
   }
 
   @media (min-width: $desktop-small-width) {
@@ -86,9 +87,9 @@
 }
 
 .object-sale_wrapper {
+  display: grid;
 
   @media (min-width: $desktop-small-width) {
-    display: grid;
     grid-template-columns: 575px 805px;
     //grid-template-columns: 40.6% 56.85%;
     column-gap: 36px;
@@ -152,12 +153,14 @@
   line-height: 0;
   grid-row: span 2;
   margin-top: 24px;
+  order: 2;
   &--active {
     display: block;
   }
 
   @media (min-width: $desktop-small-width) {
     margin-top: 0;
+    order: unset;
   }
 }
 
@@ -185,9 +188,11 @@
 }
 
 .object-sale_features {
+  order: 4;
 
   @media (min-width: $desktop-small-width) {
     margin-top: 24px;
+    order: unset;
   }
 
   @media (min-width: $desktop-width) {
@@ -386,10 +391,11 @@
 }
 
 .object-sale_description {
-
+  order: 4;
   @media (min-width: $desktop-small-width) {
     margin-top: 36px;
     grid-row: span 2;
+    order: unset;
   }
 }
 
@@ -440,11 +446,12 @@
 }
 
 .object-sale_photos-wrapper {
+  order: 3;
 
   @media (min-width: $desktop-small-width) {
-    display: flex;
     height: 86px;
     margin-top: 16px;
+    order: unset;
   }
 }
 
@@ -469,10 +476,12 @@
 }
 
 .object-sale-map {
+  order: 5;
 
   @media (min-width: $desktop-small-width) {
     margin-top: 24px;
     border-radius: 16px;
+    order: unset;
   }
 }
 
