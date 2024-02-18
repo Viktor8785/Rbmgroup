@@ -82,7 +82,9 @@
   }
 
   @media (min-width: $desktop-small-width) {
+    width: 100%;
     height: 36px;
+    margin-top: 0;
   }
 }
 
@@ -91,7 +93,6 @@
 
   @media (min-width: $desktop-small-width) {
     grid-template-columns: 575px 805px;
-    //grid-template-columns: 40.6% 56.85%;
     column-gap: 36px;
     grid-template-rows: 36px 494px 102px max-content;
     margin-top: 24px;
@@ -100,7 +101,7 @@
   @media (min-width: $desktop-width) {
     grid-template-columns: 730px 1118px;
     column-gap: 48px;
-    grid-template-rows: 36px 570px 102px max-content;
+    //grid-template-rows: 36px 570px 102px max-content;
   }
 }
 
@@ -166,9 +167,10 @@
 
 .object-sale_img {
   width: 100%;
-  width: 100%;
+  min-height: 250px;
   border-radius: 16px;
   object-fit: cover;
+  aspect-ratio: 361/250;
 
   @media (min-width: $tablet-width) {
     width: 696px;
@@ -183,97 +185,106 @@
   @media (min-width: $desktop-width) {
     width: 1118px;
     max-width: 1118px;
-    height: 606px;
+    //height: 606px;
   }
 }
 
 .object-sale_features {
+  margin-top: 24px;
   order: 4;
 
   @media (min-width: $desktop-small-width) {
-    margin-top: 24px;
     order: unset;
   }
 
   @media (min-width: $desktop-width) {
-    margin-top: 40px;
+    //margin-top: 40px;
   }
 }
 
 .object-sale_finance {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(44, 46, 53, 0.12);
+
+  @media (min-width: $tablet-width) {
+    justify-content: space-between;
+  }
 
   @media (min-width: $desktop-small-width) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding-bottom: 22px;
-    border-bottom: 1px solid rgba(44, 46, 53, 0.12);
   }
 }
 
 .object-sale_finance-block {
+  width: 180px;
+  padding-bottom: 16px;
 
+  @media (min-width: $desktop-small-width) {
+    width: inherit;
+    padding-bottom: 0;
+  }
 }
 
 .finance-block_subtitle,
 .features-features_subtitle {
-
-  @media (min-width: $desktop-small-width) {
-    margin: 0;
-    font-size: 12px;
-    font-weight: 400;
-    opacity: 0.5;
-  }
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.5;
 }
 
 .finance-block_title {
-
-  @media (min-width: $desktop-small-width) {
-    margin: 0;
-    font-size: 20px;
-    font-weight: 500;
-  }
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .object-sale_features-features {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 16px;
+  margin-top: 16px;
+
+  @media (min-width: $tablet-width) {
+    justify-content: space-between;
+  }
 
   @media (min-width: $desktop-small-width) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    row-gap: 16px;
     margin-top: 24px;
   }
 
   @media (min-width: $desktop-width) {
-    margin-top: 60px;
+    //margin-top: 50px;
   }
 }
 
 .features-features_block {
+  display: flex;
+  width: 180px;
+  height: 32px;
+  align-items: center;
 
   @media (min-width: $desktop-small-width) {
-    display: flex;
-    height: 32px;
-    align-items: center;
+    width: inherit;
   }
 }
 
 .features-features_block-wrapper {
-
-  @media (min-width: $desktop-small-width) {
-    display: grid;
-    height: 32px;
-    margin-left: 12px;
-    align-content: space-between;
-  }
+  display: grid;
+  height: 32px;
+  margin-left: 12px;
+  align-content: space-between;
 }
 
 .features-features_title {
-
-  @media (min-width: $desktop-small-width) {
-    margin: 0;
-    font-size: 16px;
-    font-weight: 500;
-  }
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .features-features_icon {
@@ -282,116 +293,138 @@
 }
 
 .object-sale_bunners {
+  display: flex;
+  height: 30px;
+  margin-top: 24px;
 
   @media (min-width: $desktop-small-width) {
-    display: flex;
     height: 34px;
-    margin-top: 24px;
   }
 }
 
 .bunners-item {
+  display: flex;
+  height: 30px;
+  margin-left: 18px;
+  align-items: center;
+  border: 1px solid $blue2;
+  border-radius: 24px;
+  background-color: rgba(75, 152, 255, 0.16);
+  &:nth-child(1) {
+    margin-left: 0;
+  }
 
   @media (min-width: $desktop-small-width) {
-    display: flex;
     height: 34px;
     margin-left: 24px;
-    align-items: center;
-    border: 1px solid $blue2;
-    border-radius: 24px;
-    background-color: rgba(75, 152, 255, 0.16);
-    &:nth-child(1) {
-      margin-left: 0;
-    }
   }
 }
 
 .bunners-item_icon {
   width: 18px;
   height: 18px;
-  margin-left: 16px;
+  margin-left: 12px;
 }
 
 .bunners-item_title {
   margin: 0;
-  margin-left: 8px;
-  margin-right: 16px;
+  margin-left: 3px;
+  margin-right: 12px;
   color: $blue1;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 500;
+
+  @media (min-width: $desktop-small-width) {
+    margin-right: 16px;
+    font-size: 12px;
+  }
 }
 
 .object-sale_recall {
+  height: 275px;
+  margin-top: 24px;
+  padding: 24px;
+  border-radius: 16px;
+  background-color: rgba(75, 152, 255, 0.16);
 
   @media (min-width: $desktop-small-width) {
     height: 163px;
     margin-top: 36px;
-    padding: 24px;
-    border-radius: 16px;
-    background-color: rgba(75, 152, 255, 0.16);
   }
 
   @media (min-width: $desktop-width) {
-    margin-top: 60px;
+    //margin-top: 70px;
   }
 }
 
 .recall_title {
-
-  @media (min-width: $desktop-small-width) {
-    padding: 0;
-    margin: 0;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 100%;
-  }
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 100%;
 }
 
 .recall_input-wrapper {
+  display: block;
+  margin-top: 24px;
 
   @media (min-width: $desktop-small-width) {
     display: flex;
     height: 48px;
-    margin-top: 24px;
     justify-content: space-between;
   }
 }
 
 .recall_input {
+  width: calc(100% - 24px);
+  height: 16px;
+  padding: 16px 12px;
+  margin-bottom: 16px;
+  outline: none;
+  border: none;
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: $dark;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 100%;
 
   @media (min-width: $desktop-small-width) {
     width: 44%;
-    padding: 16px 12px;
-    outline: none;
-    border: none;
-    border-radius: 12px;
-    background-color: #ffffff;
-    color: $dark;
-    font-family: "Roboto", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 100%;
   }
 }
 
 .recall_button {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  margin-top: 24px;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  background-color: $blue1;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  color: #ffffff;
 
   @media (min-width: $desktop-small-width) {
+    display: block;
+    width: unset;
+    height: unset;
     margin-top: 24px;
     padding: 16px 36px;
-    outline: none;
-    border: none;
-    border-radius: 8px;
-    background-color: $blue1;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 100%;
-    color: #ffffff;
   }
 }
 
 .object-sale_description {
+  margin-top: 24px;
   order: 4;
+
   @media (min-width: $desktop-small-width) {
     margin-top: 36px;
     grid-row: span 2;
@@ -401,16 +434,18 @@
 
 .description_address-title,
 .description_description-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
 
   @media (min-width: $desktop-small-width) {
-    margin: 0;
     font-size: 20px;
-    font-weight: 700;
   }
 }
 
 
 .description_description-title {
+  margin-top: 24px;
 
   @media (min-width: $desktop-small-width) {
     margin-top: 36px;
@@ -420,32 +455,24 @@
 .description_address-address,
 .description_address-district,
 .description_description-text {
+  margin: 0;
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 130%;
 
   @media (min-width: $desktop-small-width) {
-    margin: 0;
-    margin-top: 16px;
     font-size: 18px;
-    font-weight: 400;
-    line-height: 130%;
-  }
-}
-
-.description_address-district,
-.description_description-text {
-
-  @media (min-width: $desktop-small-width) {
-    margin-top: 8px;
   }
 }
 
 .description_description-text {
-
-  @media (min-width: $desktop-small-width) {
-    white-space: pre-line;
-  }
+  white-space: pre-line;
 }
 
 .object-sale_photos-wrapper {
+  height: 56px;
+  margin-top: 12px;
   order: 3;
 
   @media (min-width: $desktop-small-width) {
@@ -456,44 +483,53 @@
 }
 
 .photos_picture {
-  margin-left: 16px;
+  margin-left: 8px;
   line-height: 0;
   border-radius: 8px;
   cursor: pointer;
   &:nth-child(1) {
     margin-left: 0;
   }
+
+  @media (min-width: $desktop-small-width) {
+    margin-left: 12px;
+  }
 }
 
 .photos_img {
+  width: calc(((100% - 24px) / 5) - 5px);
+  height: 58px;
+  object-fit: cover;
+  border-radius: 8px;
 
   @media (min-width: $desktop-small-width) {
     width: 148px;
     height: 86px;
-    object-fit: fill;
-    border-radius: 8px;
   }
 }
 
 .object-sale-map {
+  margin-top: 24px;
+  border-radius: 16px;
   order: 5;
 
   @media (min-width: $desktop-small-width) {
-    margin-top: 24px;
-    border-radius: 16px;
     order: unset;
   }
 }
 
 .object-sale_map-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 16px;
 
   @media (min-width: $desktop-small-width) {
     width: 805px;
-    min-height: 100%;
     height: max-content;
-    object-fit: cover;
-    overflow: hidden;
-    border-radius: 16px;
+    min-height: 372px;
+    max-height: 509px;
   }
 
   @media (min-width: $desktop-width) {
