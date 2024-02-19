@@ -1,5 +1,5 @@
 export const cardBsale =
-` <li class="card">
+` <a class="card"  href="object-bsale.html">
     <div class="card_wrapper">
       <div class="card_slider">
         <div class="slider_container">
@@ -107,4 +107,4 @@ export const cardBsale =
         </div>
       </div>
     </div>
-  </li>`
+  </a>`

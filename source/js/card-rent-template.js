@@ -1,5 +1,5 @@
 export const cardRent =
-` <li class="card">
+` <a class="card" href="object-rent.html">
     <div class="card_wrapper">
       <div class="card_slider">
         <div class="slider_container">
@@ -98,4 +98,4 @@ export const cardRent =
         </div>
       </div>
     </div>
-  </li>`
+  </a>`

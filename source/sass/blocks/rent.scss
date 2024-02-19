@@ -15,7 +15,6 @@
   justify-items: center;
 
   @media (min-width: $desktop-small-width) {
-    display: grid;
     margin-top: 48px;
     grid-template-columns: 702px 1fr;
     column-gap: 22px;
@@ -36,6 +35,7 @@
 }
 
 .rent_catalog-map {
+  position: relative;
   width: 100%;
   line-height: 0;
   margin-top: 24px;
@@ -55,7 +55,7 @@
 
 .map_img {
   width: 100%;
-  object-fit: fill;
+  min-height: 600px;
 
   @media (min-width: $desktop-small-width) {
     width: 1172px;
@@ -64,7 +64,7 @@
 }
 
 .rent_recall {
-  display: block;
+  display: grid;
   width: calc(100% - 32px);
   padding: 16px;
   background-color: $gray2;

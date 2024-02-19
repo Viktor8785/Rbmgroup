@@ -46,6 +46,7 @@
 
 .page_body-wrapper {
   display: grid;
+  grid-template-columns: minmax(368px, 1fr);
   width: calc(100% - 32px);
   justify-content: center;
 

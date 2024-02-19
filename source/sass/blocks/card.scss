@@ -1,7 +1,8 @@
 .catalog {
   display: grid;
   width: 100%;
-  justify-content: center;
+  //justify-content: center;
+  justify-items: center;
 
   @media (min-width: $tablet-width) {
     display: block;
@@ -12,24 +13,30 @@
 .card-list {
   display: flex;
   flex-wrap: wrap;
-  width: 361px;
+  width: 100%;
+  min-width: 361px;
   justify-content: space-around;
   padding: 0;
   margin: 0;
 
+  @media (min-width: $mobile-max-width) {
+    width: 398px;
+  }
+
   @media (min-width: $tablet-width) {
     width: 100%;
+    min-width: 343px;
   }
 
   @media (min-width: $desktop-small-width) {
-    width: 100%;
     justify-content: unset;
   }
 }
 
 .card {
   position: relative;
-  width: 361px;
+  width: 100%;
+  min-width: 361px;
   min-height: 538px;
   height: max-content;
   margin-bottom: 12px;
@@ -40,8 +47,13 @@
   cursor: pointer;
   color: inherit;
 
+  @media (min-width: $mobile-max-width) {
+    width: 398px;
+  }
+
   @media (min-width: $tablet-width) {
     width: 343px;
+    min-width: 343px;
   }
 
   @media (min-width: $desktop-small-width) {
@@ -62,18 +74,24 @@
 
 .card_slider {
   position: relative;
-  width: 329px;
+  width: calc(100vw - 64px);
+  min-width: 334px;
   height: 247px;
   overflow-x: hidden;
 
+  @media (min-width: $mobile-max-width) {
+    width: 364px;
+  }
+
   @media (min-width: $tablet-width) {
-    width: 313px;
+    width: 311px;
+    min-width: 311px;
   }
 }
 
 .slider_container {
   position: relative;
-  width: 329px;
+  //width: calc(100% - 32px);
   height: 247px;
 
   @media (hover: none) and (pointer: coarse) {
@@ -86,8 +104,12 @@
     flex-wrap: nowrap;
   }
 
+  @media (min-width: $mobile-max-width) {
+    width: 364px;
+  }
+
   @media (min-width: $tablet-width) {
-    width: 313px;
+    width: 311px;
   }
 }
 
@@ -108,13 +130,19 @@
 }
 
 .card_img {
-  width: 329px;
+  width: calc(100vw - 64px);
+  min-width: 334px;
   height: 247px;
   border-radius: 16px;
   object-fit: fill;
 
+  @media (min-width: $mobile-max-width) {
+    width: 364px;
+  }
+
   @media (min-width: $tablet-width) {
-    width: 313px;
+    width: 311px;
+    min-width: 311px;
   }
 }
 
