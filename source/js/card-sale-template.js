@@ -3,7 +3,7 @@ export const cardSale =
   <div class="card_wrapper">
     <div class="card_slider">
       <div class="slider_container">
-        <picture class="card_picture card_picture--active">
+        <picture class="card_picture">
           <img class="card_img" src="img/Card2-desktop.jpg" alt="Ресторан">
         </picture>
         <picture class="card_picture">

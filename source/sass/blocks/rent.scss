@@ -43,6 +43,8 @@
   border-radius: 24px;
 
   @media (min-width: $desktop-small-width) {
+    position: sticky;
+    top: 0;
     width: 692px;
     //height: 1208px;
     margin-top: 0;
@@ -59,7 +61,7 @@
 
   @media (min-width: $desktop-small-width) {
     width: 1172px;
-    height: 1214px;
+    //height: 1214px;
   }
 }
 
