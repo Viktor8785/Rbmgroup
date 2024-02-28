@@ -5,18 +5,33 @@ export const cardBsale =
         <div class="slider_container">
           <picture class="card_picture">
             <img class="card_img" src="img/Card2-desktop.jpg" alt="Ресторан">
+            <div class="object-sale_water">
+              <img class="card_img" src="img/watermark/watermark-card.png" alt="">
+            </div>
           </picture>
           <picture class="card_picture">
             <img class="card_img" src="img/Card1-desktop.jpg" alt="Ресторан">
+            <div class="object-sale_water">
+              <img class="card_img" src="img/watermark/watermark-card.png" alt="">
+            </div>
           </picture>
           <picture class="card_picture">
             <img class="card_img" src="img/Card3-desktop.jpg" alt="Ресторан">
+            <div class="object-sale_water">
+              <img class="card_img" src="img/watermark/watermark-card.png" alt="">
+            </div>
           </picture>
           <picture class="card_picture">
             <img class="card_img" src="img/Card4-desktop.jpg" alt="Ресторан">
+            <div class="object-sale_water">
+              <img class="card_img" src="img/watermark/watermark-card.png" alt="">
+            </div>
           </picture>
           <picture class="card_picture">
             <img class="card_img" src="img/Card5-desktop.jpg" alt="Ресторан">
+            <div class="object-sale_water">
+              <img class="card_img" src="img/watermark/watermark-card.png" alt="">
+            </div>
           </picture>
         </div>
         <div class="card_picture-wrapper">
