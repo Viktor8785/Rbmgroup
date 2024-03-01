@@ -1,7 +1,7 @@
 import {header} from './header.js';
-import {sliderInit} from './slider.js'
-import {cardRent} from './card-rent-template.js';
-
+//import { getObjects } from './load-objects.js';
+import { Pagination } from './paginator.js';
+//import { createObjectList } from './createObjectList.js';
 const map = document.querySelector(".map_img");
 const dropdownRent = document.querySelector("#rent-dropdown");
 const inputRent = document.querySelector("#rent-input")
@@ -12,31 +12,18 @@ const bSaleTitle = document.querySelector("#bsale-title");
 const bSaleInput1 = document.querySelector("#bsale-input1");
 const bSaleInput2 = document.querySelector("#bsale-input2");
 const cardList = document.querySelector('.card-list');
-const cards = cardList.children;
 
 const windowHeight = document.documentElement.clientHeight;
 map.style.height = windowHeight + 'px';
 
-for(let j = 0; j < 2; j++) {
-  for(let i=0; i < 4; i++) {
-    const div = document.createElement('div');
-    div.innerHTML = cardRent;
-    const container = div.querySelector(".slider_container");
-    const pictures = container.querySelectorAll(".card_picture");
-    const picture = [...pictures][i].cloneNode(true);
-    picture.classList.add('card_picture--active');
-    [...pictures][i].remove();
-    container.insertAdjacentElement('afterbegin', picture);
-    const li = div.firstElementChild;
-    li.classList.add('card--deal');
-    cardList.insertAdjacentElement('afterbegin', li);
-  }
-}
+//createObjectList(16, cardList);
 
-[...cards].forEach(card => {
-  const slider = card.querySelector('.card_wrapper');
-  sliderInit(slider, card, 5);
-})
+new Pagination(
+  document.querySelector(".card-list"),
+  document.querySelector(".pagination-wrapper"),
+  1,
+  20
+);
 
 options.forEach(option => {
   option.addEventListener('click', (ev) => {

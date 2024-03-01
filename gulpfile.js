@@ -50,22 +50,22 @@ export function processStyles () {
 
 export function processScripts () {
   return gulp.src('source/js/**/*.js')
-    .pipe(terser())
+    //.pipe(terser())
     .pipe(gulp.dest('build/js'))
     .pipe(browser.stream());
 }
 
 export function optimizeImages () {
   return gulp.src('source/img/**/*.{png,jpg}')
-    .pipe(gulpIf(isDevelopment, squoosh()))
+    //.pipe(gulpIf(isDevelopment, squoosh()))
     .pipe(gulp.dest('build/img'))
 }
 
 export function createWebp () {
   return gulp.src('source/img/**/*.{png,jpg}')
-    .pipe(gulpIf(!isDevelopment,squoosh({
-      webp: {}
-    })))
+    // .pipe(gulpIf(!isDevelopment,squoosh({
+    //   webp: {}
+    // })))
     .pipe(gulp.dest('build/img'))
 }
 

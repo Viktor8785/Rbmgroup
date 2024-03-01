@@ -1,0 +1,37 @@
+{
+  "name": "pure-paginator",
+  "version": "1.0.3",
+  "description": "Pure javascript list paginator",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "module": "./dist/pure-paginator.js",
+  "main": "./dist/pure-paginator.umd.cjs",
+  "exports": {
+    ".": {
+      "import": "./dist/pure-paginator.js",
+      "require": "./dist/pure-paginator.umd.cjs"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustKlopsi/pure-paginator.git"
+  },
+  "author": "JustKlopsi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JustKlopsi/pure-paginator/issues"
+  },
+  "homepage": "https://github.com/JustKlopsi/pure-paginator#readme",
+  "devDependencies": {
+    "vite": "^4.4.5",
+    "vite-plugin-css-injected-by-js": "^3.3.0"
+  }
+}

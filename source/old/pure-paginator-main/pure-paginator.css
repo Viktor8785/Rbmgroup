@@ -1,0 +1,32 @@
+.pagination-inactive {
+  display: none;
+}
+
+.pagination-number-wrapper {
+  display: flex;
+}
+
+.pagination-site-number-wrapper {
+  display: flex;
+}
+
+.pagination-button-not-displayed {
+  display: none;
+}
+
+.pagination-placeholder {
+  display: none;
+  justify-content: center;
+}
+
+.pagination-placeholder.active {
+  display: flex;
+}
+
+.pagination-placeholder {
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

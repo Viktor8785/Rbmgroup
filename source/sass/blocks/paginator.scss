@@ -1,0 +1,90 @@
+.pagination-inactive {
+  display: none;
+}
+
+.pagination-number-wrapper {
+  display: flex;
+}
+
+.pagination-site-number-wrapper {
+  display: flex;
+  gap: 0 3px;
+
+  @media (min-width: $tablet-width) {
+    gap: 0 8px;
+  }
+}
+
+.pagination-button-not-displayed {
+  display: none;
+}
+
+.pagination-placeholder {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(44, 46, 53, 0.12);
+  border-radius: 8px;
+  color: $dark;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+  background-color: transparent;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  &.active {
+    display: flex;
+    cursor: unset;
+  }
+}
+
+.pagination-wrapper {
+  padding: 4px;
+  margin-top: 4px;
+  margin-bottom: 16px;
+  gap: 0 8px;
+  & button {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(44, 46, 53, 0.12);
+      border-radius: 8px;
+      color: $dark;
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      background-color: transparent;
+      outline: none;
+      cursor: pointer;
+    }
+}
+
+.pagination-wrapper button.active {
+  color: #ffffff;
+  cursor: unset;
+  background-color: $blue1;
+  &:hover {
+    background-color: $blue1;
+  }
+}
+
+.pagination-wrapper button:hover {
+  background-color: rgba(44, 46, 53, 0.06);
+}
+
+.pagination-wrapper button.prev-button,
+.pagination-wrapper button.next-button {
+  &--disabled {
+    cursor: unset;
+    color: rgba(44, 46, 53, 0.5);
+    &:hover {
+      color: rgba(44, 46, 53, 0.5);
+      background-color: transparent;
+    }
+  }
+}

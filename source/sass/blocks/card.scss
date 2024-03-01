@@ -114,6 +114,7 @@
 }
 
 .card_picture {
+  position: relative;
   display: none;
   line-height: 0;
   &--active {
