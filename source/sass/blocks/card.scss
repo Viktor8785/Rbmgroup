@@ -91,7 +91,6 @@
 
 .slider_container {
   position: relative;
-  //width: calc(100% - 32px);
   height: 247px;
 
   @media (hover: none) and (pointer: coarse) {
@@ -231,7 +230,7 @@
   display: grid;
   grid-template-columns: 1fr 16px;
   grid-template-rows: 1fr 15px;
-  width: 281px;
+  width: calc(100% - 32px);
   height: 215px;
 }
 

@@ -1,7 +1,7 @@
 import {header} from './header.js';
-//import { getObjects } from './load-objects.js';
 import { Pagination } from './paginator.js';
-//import { createObjectList } from './createObjectList.js';
+import {RENT} from './deals.js';
+
 const map = document.querySelector(".map_img");
 const dropdownRent = document.querySelector("#rent-dropdown");
 const inputRent = document.querySelector("#rent-input")
@@ -11,19 +11,13 @@ const bSaleMobile = document.querySelector("#bsale-mobile");
 const bSaleTitle = document.querySelector("#bsale-title");
 const bSaleInput1 = document.querySelector("#bsale-input1");
 const bSaleInput2 = document.querySelector("#bsale-input2");
-const cardList = document.querySelector('.card-list');
 
 const windowHeight = document.documentElement.clientHeight;
 map.style.height = windowHeight + 'px';
+const startPage = 1;
+const pageSize = 20;
 
-//createObjectList(16, cardList);
-
-new Pagination(
-  document.querySelector(".card-list"),
-  document.querySelector(".pagination-wrapper"),
-  1,
-  20
-);
+new Pagination(RENT, document.querySelector(".card-list"), document.querySelector(".pagination-wrapper"), startPage, pageSize);
 
 options.forEach(option => {
   option.addEventListener('click', (ev) => {
