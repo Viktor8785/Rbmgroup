@@ -18,7 +18,7 @@ const bSaleInput2 = document.querySelector("#bsale-input2");
 const windowHeight = document.documentElement.clientHeight;
 map.style.height = windowHeight + 'px';
 const startPage = 1;
-const pageSize = 20;
+const pageSize = 12;
 let loadMap = false;
 
 
