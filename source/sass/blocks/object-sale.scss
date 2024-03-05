@@ -537,13 +537,23 @@
 
 .object-sale-map {
   position: relative;
+  width: 100%;
+  min-height: 600px;
   margin-top: 24px;
+  overflow: hidden;
   border-radius: 16px;
   order: 5;
 
   @media (min-width: $desktop-small-width) {
+    width: 805px;
+    min-height: unset;
+    max-height: 509px;
     margin-top: 12px;
     order: unset;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1118px;
   }
 }
 
