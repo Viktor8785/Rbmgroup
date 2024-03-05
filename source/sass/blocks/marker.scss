@@ -10,7 +10,7 @@
   color: #ffffff;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   border: 2px solid #ffffff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -46,4 +46,33 @@
   padding-left: 16px;
   margin: 0;
   color: $dark;
+}
+
+.balloon-title {
+  margin-top: -5px;
+  font-weight: 300;
+  opacity: 0.5;
+}
+
+.balloon-sup {
+  font-size: 9px;
+}
+
+.balloon-dot {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.balloon-span {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.balloon-address {
+  font-weight: 300;
+}
+
+.ballon-price {
+  font-weight: 700;
+  font-size: 16px;
 }
