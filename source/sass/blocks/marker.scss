@@ -1,4 +1,5 @@
 .marker {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,4 +14,36 @@
   border: 2px solid #ffffff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.balloon {
+  position: absolute;
+  display: none;
+  top: -251px;
+  left: -157px;
+  width: 216px;
+  height: 249px;
+  background-color: #ffffff;
+  border-radius: 24px 24px 0 24px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  &--open {
+    display: grid;
+  }
+}
+
+.balloon-img {
+  width: 184px;
+  height: 143px;
+  margin: 16px 16px 0 16px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.balloon-title,
+.balloon-address,
+.ballon-price {
+  padding: 0;
+  padding-left: 16px;
+  margin: 0;
+  color: $dark;
 }
